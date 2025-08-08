@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" prefHeight="600.0" prefWidth="800.0" spacing="12.0" style="-fx-background-color: linear-gradient(to bottom, #667eea 0%, #764ba2 100%);" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ProfileController">
+     <padding>
+    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+  </padding>
+  <children>
+     <VBox alignment="CENTER" maxHeight="550" maxWidth="760"  spacing="10.0" style="-fx-background-color: rgba(255, 255, 255, 0.95);                   -fx-background-radius: 15;                   -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 15, 0, 0, 3);                   -fx-padding: 20;">
+        <children>
+           <Label style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" text="👤 My Profile">
+              <font>
+                 <Font name="System Bold" size="20.0" />
+              </font>
+           </Label>
+           <Label style="-fx-text-fill: #7f8c8d; -fx-font-size: 12px;" text="Manage your personal information">
+              <font>
+                 <Font size="12.0" />
+              </font>
+           </Label>
+
+           <TextField fx:id="nameField" promptText="👤 Full Name" style="-fx-background-color: white; -fx-border-color: #bdc3c7;                              -fx-border-width: 2; -fx-border-radius: 10;                              -fx-background-radius: 10; -fx-padding: 8 10 8 10;                              -fx-font-size: 12px;" />
+           <TextField fx:id="studentIdField" promptText="🆔 Student ID" style="-fx-background-color: white; -fx-border-color: #bdc3c7;                              -fx-border-width: 2; -fx-border-radius: 10;                              -fx-background-radius: 10; -fx-padding: 8 10 8 10;                              -fx-font-size: 12px;" />
+           <TextField fx:id="departmentField" promptText="🏫 Department" style="-fx-background-color: white; -fx-border-color: #bdc3c7;                              -fx-border-width: 2; -fx-border-radius: 10;                              -fx-background-radius: 10; -fx-padding: 8 10 8 10;                              -fx-font-size: 12px;" />
+           <TextField fx:id="mobileField" promptText="📱 Mobile Number" style="-fx-background-color: white; -fx-border-color: #bdc3c7;                              -fx-border-width: 2; -fx-border-radius: 10;                              -fx-background-radius: 10; -fx-padding: 8 10 8 10;                              -fx-font-size: 12px;" />
+           <TextField fx:id="emailField" promptText="📧 Email Address" style="-fx-background-color: white; -fx-border-color: #bdc3c7;                              -fx-border-width: 2; -fx-border-radius: 10;                              -fx-background-radius: 10; -fx-padding: 8 10 8 10;                              -fx-font-size: 12px;" />
+           
+           <Button fx:id="editButton" mnemonicParsing="false" onAction="#handleEdit" prefWidth="200.0" style="-fx-background-color: linear-gradient(to bottom, #3498db, #2980b9);                           -fx-text-fill: white; -fx-font-size: 12px; -fx-font-weight: bold;                           -fx-background-radius: 18;" text="✏️ Edit Profile" />
+           <Button fx:id="saveButton" mnemonicParsing="false" onAction="#handleSave" prefWidth="200.0" style="-fx-background-color: linear-gradient(to bottom, #27ae60, #229954);                           -fx-text-fill: white; -fx-font-size: 12px; -fx-font-weight: bold;                           -fx-background-radius: 18;" text="💾 Save Changes" visible="false" />
+           <Button fx:id="backButton" mnemonicParsing="false" onAction="#handleBack" prefWidth="200.0" style="-fx-background-color: linear-gradient(to bottom, #3498db, #2980b9);                           -fx-text-fill: white; -fx-font-size: 12px; -fx-font-weight: bold;                           -fx-background-radius: 18;" text="⬅️ Back to Dashboard" />
+           <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#handleCancel" prefWidth="200.0" style="-fx-background-color: linear-gradient(to bottom, #95a5a6, #7f8c8d);                           -fx-text-fill: white; -fx-font-size: 12px; -fx-font-weight: bold;                           -fx-background-radius: 18;" text="❌ Cancel" visible="false" />
+        </children>
+     </VBox>
+  </children>
+  
+</VBox>

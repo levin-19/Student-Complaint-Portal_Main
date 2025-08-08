@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="700.0" prefWidth="1000.0" spacing="20.0" style="-fx-background-color: linear-gradient(to bottom, #667eea 0%, #764ba2 100%);" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AdminDashboardController">
+   <children>
+      <VBox spacing="20.0" style="-fx-background-color: linear-gradient(to bottom right, #f8f9ff 0%, #e8f0ff 100%); -fx-background-radius: 15; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0, 0, 2); -fx-padding: 25;">
+         <children>
+            <Label text="🛡️ Admin Dashboard" style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;">
+               <font>
+                  <Font name="System Bold" size="26.0" />
+               </font>
+            </Label>
+            <Label text="Manage and monitor all student complaints" style="-fx-text-fill: #7f8c8d; -fx-font-size: 14px;">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER" spacing="20.0">
+               <children>
+                  <VBox alignment="CENTER" spacing="8.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 8, 0, 0, 2); -fx-padding: 20; -fx-border-color: #9b59b6; -fx-border-width: 2; -fx-border-radius: 15;">
+                     <children>
+                        <Label fx:id="totalStudentsLabel" text="👥 Students: 0" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #9b59b6;" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" spacing="8.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 8, 0, 0, 2); -fx-padding: 20; -fx-border-color: #3498db; -fx-border-width: 2; -fx-border-radius: 15;">
+                     <children>
+                        <Label fx:id="totalComplaintsLabel" text="📊 Total: 0" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #3498db;" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" spacing="8.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 8, 0, 0, 2); -fx-padding: 20; -fx-border-color: #f39c12; -fx-border-width: 2; -fx-border-radius: 15;">
+                     <children>
+                        <Label fx:id="pendingLabel" text="⏳ Pending: 0" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #f39c12;" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" spacing="8.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 8, 0, 0, 2); -fx-padding: 20; -fx-border-color: #3498db; -fx-border-width: 2; -fx-border-radius: 15;">
+                     <children>
+                        <Label fx:id="ongoingLabel" text="🔄 In Progress: 0" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #3498db;" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" spacing="8.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 8, 0, 0, 2); -fx-padding: 20; -fx-border-color: #27ae60; -fx-border-width: 2; -fx-border-radius: 15;">
+                     <children>
+                        <Label fx:id="resolvedLabel" text="✅ Resolved: 0" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #27ae60;" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" spacing="15.0">
+               <children>
+                  <Label text="🔍 Filter by Status:" style="-fx-text-fill: #2c3e50; -fx-font-size: 14px; -fx-font-weight: bold;">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="statusFilter" onAction="#handleFilter" prefWidth="170.0" style="-fx-background-color: white; -fx-border-color: #bdc3c7; -fx-border-width: 2; -fx-border-radius: 15; -fx-background-radius: 15; -fx-padding: 8 15 8 15; -fx-font-size: 14px;" />
+               </children>
+            </HBox>
+            <TableView fx:id="complaintsTable" prefHeight="380.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0, 0, 3); -fx-border-color: #ecf0f1; -fx-border-width: 1; -fx-border-radius: 15;">
+              <columns>
+                <TableColumn fx:id="idColumn" prefWidth="60.0" text="ID" />
+                <TableColumn fx:id="studentEmailColumn" prefWidth="180.0" text="Student Email" />
+                <TableColumn fx:id="titleColumn" prefWidth="200.0" text="Title" />
+                <TableColumn fx:id="categoryColumn" prefWidth="120.0" text="Category" />
+                <TableColumn fx:id="statusColumn" prefWidth="120.0" text="Status" />
+                <TableColumn fx:id="feedbackColumn" prefWidth="260.0" text="Feedback" />
+                <TableColumn fx:id="actionsColumn" prefWidth="220.0" text="Actions" />
+              </columns>
+            </TableView>
+            <Button fx:id="logoutButton" mnemonicParsing="false" onAction="#handleLogout" prefWidth="200.0" text="🚪 Logout" style="-fx-background-color: linear-gradient(to bottom, #e74c3c, #c0392b); -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-background-radius: 25;" />
+         </children>
+      </VBox>
+   </children>
+   <padding>
+      <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+   </padding>
+</VBox>
