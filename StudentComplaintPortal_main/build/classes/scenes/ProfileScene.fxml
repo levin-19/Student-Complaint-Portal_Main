@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" prefHeight="500.0" prefWidth="900.0" spacing="12.0"
+      style="-fx-background-color: linear-gradient(to bottom, #667eea 0%, #764ba2 100%);"
+      xmlns="http://javafx.com/javafx/11.0.1"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="controllers.ProfileController">
+  <children>
+     <VBox alignment="CENTER" spacing="10.0"
+           style="-fx-background-color: rgba(255, 255, 255, 0.95);
+                  -fx-background-radius: 15;
+                  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 15, 0, 0, 3);
+                  -fx-padding: 20;">
+        <children>
+           <Label text="👤 My Profile"
+                  style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;">
+              <font>
+                 <Font name="System Bold" size="20.0" />
+              </font>
+           </Label>
+           <Label text="Manage your personal information"
+                  style="-fx-text-fill: #7f8c8d; -fx-font-size: 12px;">
+              <font>
+                 <Font size="12.0" />
+              </font>
+           </Label>
+
+           <!-- Profile Image -->
+           <ImageView fx:id="profileImageView" fitHeight="100.0" fitWidth="100.0"
+                      pickOnBounds="true" preserveRatio="true"
+                      style="-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 5, 0, 0, 2);
+                             -fx-background-radius: 50; -fx-border-color: #ecf0f1;
+                             -fx-border-radius: 50; -fx-border-width: 2;" />
+           
+           <!-- Upload Picture Button -->
+           <Button fx:id="uploadPictureButton" mnemonicParsing="false"
+                   onAction="#handleUploadPicture" prefWidth="180.0"
+                   text="📸 Change Picture" visible="false"
+                   style="-fx-background-color: linear-gradient(to bottom, #9b59b6, #8e44ad);
+                          -fx-text-fill: white; -fx-font-size: 12px; -fx-font-weight: bold;
+                          -fx-background-radius: 18; -fx-cursor: hand;
+                          -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 3, 0, 0, 2);
+                          -fx-padding: 6 12 6 12;" />
+
+           <TextField fx:id="nameField" promptText="👤 Full Name"
+                      style="-fx-background-color: white; -fx-border-color: #bdc3c7;
+                             -fx-border-width: 2; -fx-border-radius: 10;
+                             -fx-background-radius: 10; -fx-padding: 8 10 8 10;
+                             -fx-font-size: 12px;" />
+           <TextField fx:id="studentIdField" promptText="🆔 Student ID"
+                      style="-fx-background-color: white; -fx-border-color: #bdc3c7;
+                             -fx-border-width: 2; -fx-border-radius: 10;
+                             -fx-background-radius: 10; -fx-padding: 8 10 8 10;
+                             -fx-font-size: 12px;" />
+           <TextField fx:id="departmentField" promptText="🏫 Department"
+                      style="-fx-background-color: white; -fx-border-color: #bdc3c7;
+                             -fx-border-width: 2; -fx-border-radius: 10;
+                             -fx-background-radius: 10; -fx-padding: 8 10 8 10;
+                             -fx-font-size: 12px;" />
+           <TextField fx:id="mobileField" promptText="📱 Mobile Number"
+                      style="-fx-background-color: white; -fx-border-color: #bdc3c7;
+                             -fx-border-width: 2; -fx-border-radius: 10;
+                             -fx-background-radius: 10; -fx-padding: 8 10 8 10;
+                             -fx-font-size: 12px;" />
+           <TextField fx:id="emailField" promptText="📧 Email Address"
+                      style="-fx-background-color: white; -fx-border-color: #bdc3c7;
+                             -fx-border-width: 2; -fx-border-radius: 10;
+                             -fx-background-radius: 10; -fx-padding: 8 10 8 10;
+                             -fx-font-size: 12px;" />
+           
+           <Button fx:id="editButton" mnemonicParsing="false" onAction="#handleEdit"
+                   prefWidth="200.0" text="✏️ Edit Profile"
+                   style="-fx-background-color: linear-gradient(to bottom, #3498db, #2980b9);
+                          -fx-text-fill: white; -fx-font-size: 12px; -fx-font-weight: bold;
+                          -fx-background-radius: 18;" />
+           <Button fx:id="saveButton" mnemonicParsing="false" onAction="#handleSave"
+                   prefWidth="200.0" text="💾 Save Changes" visible="false"
+                   style="-fx-background-color: linear-gradient(to bottom, #27ae60, #229954);
+                          -fx-text-fill: white; -fx-font-size: 12px; -fx-font-weight: bold;
+                          -fx-background-radius: 18;" />
+           <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#handleCancel"
+                   prefWidth="200.0" text="❌ Cancel" visible="false"
+                   style="-fx-background-color: linear-gradient(to bottom, #95a5a6, #7f8c8d);
+                          -fx-text-fill: white; -fx-font-size: 12px; -fx-font-weight: bold;
+                          -fx-background-radius: 18;" />
+           <Button fx:id="backButton" mnemonicParsing="false" onAction="#handleBack"
+                   prefWidth="200.0" text="⬅️ Back to Dashboard"
+                   style="-fx-background-color: linear-gradient(to bottom, #3498db, #2980b9);
+                          -fx-text-fill: white; -fx-font-size: 12px; -fx-font-weight: bold;
+                          -fx-background-radius: 18;" />
+        </children>
+     </VBox>
+  </children>
+  <padding>
+     <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+  </padding>
+</VBox>
